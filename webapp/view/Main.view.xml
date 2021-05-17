@@ -1,0 +1,14 @@
+<mvc:View controllerName="nsc.ui5.host.controller.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:nsc="sap.bnc.nsc">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text="{i18n>mainViewTitle}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<nsc:Server id="idNscServer" height="40rem" width="100%"/>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

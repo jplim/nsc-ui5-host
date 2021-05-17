@@ -1,0 +1,28 @@
+specVersion: '1.0'
+metadata:
+  name: 'nsc-ui5-host'
+type: application
+ui5Theme: sap_fiori_3
+server:
+  customMiddleware:
+  - name: fiori-tools-proxy
+    afterMiddleware: compression
+    configuration:
+      ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+      backend:
+      - path: /nss/config
+        pathPrefix: /odata/v4/geoconfig/getConfig()
+        url: https://bncsbx-sbx-nss-service.cfapps.sap.hana.ondemand.com
+      - path: /resources/sap/bnc/nsc
+        url: https://vesta-partners---aspm-vestatest-cpiot-nss-iam-flp-approuter.cfapps.eu10.hana.ondemand.com/sapbncnsc
+      ui5:
+        path: 
+        - /resources
+        - /test-resources
+        url: https://ui5.sap.com
+        version:  # The UI5 version, for instance, 1.78.1. Empty means latest version
+  - name: fiori-tools-appreload
+    afterMiddleware: compression
+    configuration:
+     port: 35729
+     path: webapp
