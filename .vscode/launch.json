@@ -12,7 +12,7 @@
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/nsc-ui5-host",
+            "cwd": "${workspaceFolder}",
             "windows": {
                 "runtimeExecutable": "npm.cmd"
             },

@@ -1,0 +1,350 @@
+{
+    "@context": "$metadata#configService.NetworkSpatialConfig",
+    "@metadataEtag": "W/\"46f99be4f94335bd642c6115a0a01b5926c10169c4acd9ae7da1382ce075fccc\"",
+    "_version": "1.0.0",
+    "ClientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+    "Applications": [
+        {
+            "ID": "e5e376f3-a2a8-4e0a-9bde-25884aaf03e5",
+            "name": "Application - AIN Equipment Ext",
+            "description": "AIN Equipment Ext",
+            "screenName": "EquipmentExt",
+            "ToScenarios": [
+                {
+                    "ID": "861f7853-9cef-4965-86f0-a4dda3d5d947",
+                    "name": "NOAA Weather",
+                    "description": "Scenario containing weather raster layers from NOAA",
+                    "isDrawEnabled": true,
+                    "ToBusinessObjectTypes": [
+                        {
+                            "ID": "6385a775-e8ef-4289-8464-877f593c79f0",
+                            "name": "Equipment",
+                            "description": "AIN Equipment"
+                        }
+                    ],
+                    "ToLayers": [
+                        {
+                            "ID": "ea8574f0-3bdc-4f02-b021-ffdfbec0852a",
+                            "name": "USA Weather (Raster)",
+                            "description": "Weather data from the National Oceanic and Atmospheric Administration",
+                            "serviceUrl": null,
+                            "odataFieldNameGeometry": null,
+                            "odataFieldNameProperties": null,
+                            "minZoom": 0,
+                            "maxZoom": 23,
+                            "layoutJson": null,
+                            "paintJson": "{\"raster-opacity\": 0.85}",
+                            "customSourceJson": "{\"type\":\"raster\",\"tiles\":[\"https://idpgis.ncep.noaa.gov/arcgis/rest/services/radar/radar_base_reflectivity_time/ImageServer/exportImage?bbox={bbox-epsg-3857}&size=256,256&format=jpgpng&transparent=true&bboxSR=3857&imageSR=3857&f=image\"],\"tileSize\":256}",
+                            "jsonConfig": null,
+                            "ToSourceType_Code": "customsource",
+                            "ToLayerType_Code": "raster",
+                            "ToSourceType": {
+                                "name": "Custom Source",
+                                "descr": null,
+                                "Code": "customsource"
+                            },
+                            "ToLayerType": {
+                                "name": "Raster",
+                                "descr": null,
+                                "Code": "raster"
+                            }
+                        },
+                        {
+                            "ID": "17933315-33a1-45e7-99a2-2bbc03e79669",
+                            "name": "USA Precipitation (Image)",
+                            "description": "Precipitation data from an static image source",
+                            "serviceUrl": null,
+                            "odataFieldNameGeometry": null,
+                            "odataFieldNameProperties": null,
+                            "minZoom": 0,
+                            "maxZoom": 23,
+                            "layoutJson": null,
+                            "paintJson": "{\"raster-opacity\": 0.85}",
+                            "customSourceJson": "{\"type\":\"image\",\"url\":\"https://docs.mapbox.com/mapbox-gl-js/assets/radar.gif\",\"coordinates\":[[-80.425,46.437],[-71.516,46.437],[-71.516,37.936],[-80.425,37.936]]}",
+                            "jsonConfig": null,
+                            "ToSourceType_Code": "customsource",
+                            "ToLayerType_Code": "raster",
+                            "ToSourceType": {
+                                "name": "Custom Source",
+                                "descr": null,
+                                "Code": "customsource"
+                            },
+                            "ToLayerType": {
+                                "name": "Raster",
+                                "descr": null,
+                                "Code": "raster"
+                            }
+                        }
+                    ],
+                    "ToActions": [
+                        {
+                            "ID": "d511ac7c-905e-11eb-a8b3-0242ac130003",
+                            "name": "Navigate Google Maps (Global)",
+                            "description": "Navigate to Google Maps",
+                            "semanticObject": null,
+                            "action": " ",
+                            "url": "https://maps.google.com/",
+                            "parameters": [],
+                            "ToActionType_Code": "urlNavigation",
+                            "ToBusinessObjectType_ID": "df90f76a-91c2-11eb-a8b3-0242ac130003",
+                            "ToActionType": {
+                                "name": "URL Navigation",
+                                "descr": null,
+                                "Code": "urlNavigation"
+                            },
+                            "ToBusinessObjectType": {
+                                "ID": "df90f76a-91c2-11eb-a8b3-0242ac130003",
+                                "clientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+                                "name": "Global",
+                                "description": "Global"
+                            }
+                        },
+                        {
+                            "ID": "54921bda-54a0-41b5-a184-7f504fce14a8",
+                            "name": "Navigate to Equipment",
+                            "description": "Navigate to AIN Equipment",
+                            "semanticObject": "ainequipment",
+                            "action": "display",
+                            "url": null,
+                            "parameters": [
+                                {
+                                    "keyName": "{{business_object_type}}",
+                                    "value": "{{app_reference_object_id}}"
+                                }
+                            ],
+                            "ToActionType_Code": "semanticNavigation",
+                            "ToBusinessObjectType_ID": "6385a775-e8ef-4289-8464-877f593c79f0",
+                            "ToActionType": {
+                                "name": "Semantic Navigation",
+                                "descr": null,
+                                "Code": "semanticNavigation"
+                            },
+                            "ToBusinessObjectType": {
+                                "ID": "6385a775-e8ef-4289-8464-877f593c79f0",
+                                "clientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+                                "name": "Equipment",
+                                "description": "AIN Equipment"
+                            }
+                        }
+                    ],
+                    "jsonConfig": null,
+                    "isDefault": false,
+                    "ToRenderer_ID": "660c602d-7630-4b06-969f-e94f835cd46a",
+                    "ToRenderer": {
+                        "ID": "660c602d-7630-4b06-969f-e94f835cd46a",
+                        "clientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+                        "name": "Mapbox",
+                        "description": "SAP Mapbox Renderer (Street Satellite)",
+                        "apiKey": "pk.eyJ1IjoibWFydGluc3RlbnppZyIsImEiOiJjazV1amZpdGwwZG92M2xucDhvbWoxMTB2In0.JWYYOv7JzUpGA51DQLQK-A",
+                        "cloudFoundryDestination": null,
+                        "url": "https://bncsbx-sbx-nss-map.cfapps.sap.hana.ondemand.com/nsc/map/",
+                        "defaultCenterLatitude": 20.47,
+                        "defaultCenterLongitude": 39.09,
+                        "defaultZoomLevel": 1,
+                        "defaultStyle": "mapbox://styles/mapbox/satellite-streets-v11",
+                        "jsonConfig": "{\"sample\":\"value\"} "
+                    }
+                },
+                {
+                    "ID": "a77708d3-a1f7-48b6-ab9c-ed9039f974ca",
+                    "name": "Scenario 1 Mapbox",
+                    "description": "Test Scenario Description",
+                    "isDrawEnabled": true,
+                    "ToBusinessObjectTypes": [
+                        {
+                            "ID": "46d55cf2-6e4d-4e32-8642-74f842b7b196",
+                            "name": "Location",
+                            "description": "AIN Location"
+                        },
+                        {
+                            "ID": "df90f76a-91c2-11eb-a8b3-0242ac130003",
+                            "name": "Global",
+                            "description": "Global"
+                        }
+                    ],
+                    "ToLayers": [
+                        {
+                            "ID": "a28382ed-703c-4e7b-b3a5-a7f535c2f155",
+                            "name": "Equipment",
+                            "description": "This shows some AIN Equipment",
+                            "serviceUrl": "https://gist.githubusercontent.com/lewingan/220c128595a462c7a34f367db6217b0f/raw/783ef3b02d752dfa6641d0478ad35888e7936fe1/equip.json",
+                            "odataFieldNameGeometry": null,
+                            "odataFieldNameProperties": null,
+                            "minZoom": 0,
+                            "maxZoom": 23,
+                            "layoutJson": "{\"icon-image\": \"hardware-15\"}",
+                            "paintJson": null,
+                            "customSourceJson": null,
+                            "jsonConfig": null,
+                            "ToSourceType_Code": "geojson",
+                            "ToLayerType_Code": "symbol",
+                            "ToSourceType": {
+                                "name": "GeoJSON",
+                                "descr": null,
+                                "Code": "geojson"
+                            },
+                            "ToLayerType": {
+                                "name": "Symbol",
+                                "descr": null,
+                                "Code": "symbol"
+                            }
+                        },
+                        {
+                            "ID": "abefbe0b-bf08-47c8-a2d2-1dbd130fc64d",
+                            "name": "Location",
+                            "description": "This shows some AIN Locations",
+                            "serviceUrl": "https://gist.githubusercontent.com/lewingan/220c128595a462c7a34f367db6217b0f/raw/9c0512b2b09bb3c018c2892d5cad4baa55e497ac/location.json",
+                            "odataFieldNameGeometry": null,
+                            "odataFieldNameProperties": null,
+                            "minZoom": 0,
+                            "maxZoom": 23,
+                            "layoutJson": null,
+                            "paintJson": "{\"circle-color\": \"#C6E2FF\"}",
+                            "customSourceJson": null,
+                            "jsonConfig": null,
+                            "ToSourceType_Code": "geojson",
+                            "ToLayerType_Code": "circle",
+                            "ToSourceType": {
+                                "name": "GeoJSON",
+                                "descr": null,
+                                "Code": "geojson"
+                            },
+                            "ToLayerType": {
+                                "name": "Circle",
+                                "descr": null,
+                                "Code": "circle"
+                            }
+                        },
+                        {
+                            "ID": "d4a1e6ee-b80e-40b2-acd6-48d4d3a42659",
+                            "name": "Current Truck Location",
+                            "description": "This shows the ever changing truck location around the globe https://docs.mapbox.com/mapbox-gl-js/example/live-geojson/",
+                            "serviceUrl": "https://wanderdrone.appspot.com/",
+                            "odataFieldNameGeometry": null,
+                            "odataFieldNameProperties": null,
+                            "minZoom": 2,
+                            "maxZoom": 23,
+                            "layoutJson": "{\"icon-image\": \"rocket-15\"}",
+                            "paintJson": null,
+                            "customSourceJson": null,
+                            "jsonConfig": null,
+                            "ToSourceType_Code": "geojson",
+                            "ToLayerType_Code": "symbol",
+                            "ToSourceType": {
+                                "name": "GeoJSON",
+                                "descr": null,
+                                "Code": "geojson"
+                            },
+                            "ToLayerType": {
+                                "name": "Symbol",
+                                "descr": null,
+                                "Code": "symbol"
+                            }
+                        },
+                        {
+                            "ID": "05425bcd-146d-4c4d-850f-01b1898732b3",
+                            "name": "Customer Poles",
+                            "description": "This shows pole locations from an ESRI Rest endpoint",
+                            "serviceUrl": "https://portal.rizing.com/server/rest/services/Testing/TEST_ELECTRIC/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&returnExtentOnly=false&datumTransformation=¶meterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson",
+                            "odataFieldNameGeometry": null,
+                            "odataFieldNameProperties": null,
+                            "minZoom": 0,
+                            "maxZoom": 23,
+                            "layoutJson": null,
+                            "paintJson": "{\"circle-color\": \"#FF0000\"}",
+                            "customSourceJson": null,
+                            "jsonConfig": null,
+                            "ToSourceType_Code": "geojson",
+                            "ToLayerType_Code": "circle",
+                            "ToSourceType": {
+                                "name": "GeoJSON",
+                                "descr": null,
+                                "Code": "geojson"
+                            },
+                            "ToLayerType": {
+                                "name": "Circle",
+                                "descr": null,
+                                "Code": "circle"
+                            }
+                        }
+                    ],
+                    "ToActions": [
+                        {
+                            "ID": "54921bda-54a0-41b5-a184-7f504fce14a8",
+                            "name": "Navigate to Equipment",
+                            "description": "Navigate to AIN Equipment",
+                            "semanticObject": "ainequipment",
+                            "action": "display",
+                            "url": null,
+                            "parameters": [
+                                {
+                                    "keyName": "{{business_object_type}}",
+                                    "value": "{{app_reference_object_id}}"
+                                }
+                            ],
+                            "ToActionType_Code": "semanticNavigation",
+                            "ToBusinessObjectType_ID": "6385a775-e8ef-4289-8464-877f593c79f0",
+                            "ToActionType": {
+                                "name": "Semantic Navigation",
+                                "descr": null,
+                                "Code": "semanticNavigation"
+                            },
+                            "ToBusinessObjectType": {
+                                "ID": "6385a775-e8ef-4289-8464-877f593c79f0",
+                                "clientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+                                "name": "Equipment",
+                                "description": "AIN Equipment"
+                            }
+                        },
+                        {
+                            "ID": "d0099a78-905e-11eb-a8b3-0242ac130003",
+                            "name": "Navigate Google Maps (BO Specific)",
+                            "description": "Navigate to Google Maps",
+                            "semanticObject": null,
+                            "action": " ",
+                            "url": "https://maps.google.com/",
+                            "parameters": [],
+                            "ToActionType_Code": "urlNavigation",
+                            "ToBusinessObjectType_ID": "46d55cf2-6e4d-4e32-8642-74f842b7b196",
+                            "ToActionType": {
+                                "name": "URL Navigation",
+                                "descr": null,
+                                "Code": "urlNavigation"
+                            },
+                            "ToBusinessObjectType": {
+                                "ID": "46d55cf2-6e4d-4e32-8642-74f842b7b196",
+                                "clientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+                                "name": "Location",
+                                "description": "AIN Location"
+                            }
+                        }
+                    ],
+                    "jsonConfig": null,
+                    "isDefault": true,
+                    "ToRenderer_ID": "770c602d-7630-4b06-969f-e94f835cd46a",
+                    "ToRenderer": {
+                        "ID": "770c602d-7630-4b06-969f-e94f835cd46a",
+                        "clientId": "76785e66-3032-4a27-b53f-4373dd135ce0",
+                        "name": "Mapbox",
+                        "description": "SAP Mapbox Renderer (Dark)",
+                        "apiKey": "pk.eyJ1IjoibWFydGluc3RlbnppZyIsImEiOiJjazV1amZpdGwwZG92M2xucDhvbWoxMTB2In0.JWYYOv7JzUpGA51DQLQK-A",
+                        "cloudFoundryDestination": null,
+                        "url": "https://bncsbx-sbx-nss-map.cfapps.sap.hana.ondemand.com/nsc/map/",
+                        "defaultCenterLatitude": 20.47,
+                        "defaultCenterLongitude": 39.09,
+                        "defaultZoomLevel": 1,
+                        "defaultStyle": "mapbox://styles/mapbox/dark-v10",
+                        "jsonConfig": "{\"sample\":\"value\"} "
+                    }
+                }
+            ],
+            "jsonConfig": null,
+            "ToApplicationType_Code": "AIN",
+            "ToApplicationType": {
+                "name": "Asset Intelligence Network",
+                "descr": "Asset Intelligence Network",
+                "Code": "AIN"
+            }
+        }
+    ]
+}

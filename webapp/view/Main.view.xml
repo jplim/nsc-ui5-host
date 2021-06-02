@@ -8,7 +8,7 @@
 			<Title text="{i18n>mainViewTitle}" level="H2"/>
 		</semantic:titleHeading>
 		<semantic:content>
-			<nsc:Server id="idNscServer" height="40rem" width="100%"/>
+			<nsc:Server id="idNscServer" height="45rem" width="100%"/>
 		</semantic:content>
 	</semantic:SemanticPage>
 </mvc:View>

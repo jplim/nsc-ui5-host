@@ -41,7 +41,9 @@
 				"sap.ui.core": {},
 				"sap.m": {},
 				"sap.f": {},
-				"sap.bnc.nsc": {}
+				"sap.bnc.nsc": {
+					"lazy": true
+				}
 			}
 		},
 		"contentDensities": {

@@ -17,18 +17,28 @@ framework:
     - name: themelib_sap_fiori_3
 server:
   customMiddleware:
+  - name: static-file
+    beforeMiddleware: serveResources
+    configuration:
+      path: ^/nss/config(.*)$
+      src: test/data/config.json
   - name: fiori-tools-proxy
     afterMiddleware: compression
     configuration:
       ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
       backend:
-      - path: /nss/config
-        pathPrefix: /odata/v4/geoconfig/getConfig()
-        url: https://bncsbx-sbx-nss-service.cfapps.sap.hana.ondemand.com
-      - path: /resources/sap/bnc/nsc
-        url: https://vesta-partners---aspm-vestatest-cpiot-nss-iam-flp-approuter.cfapps.eu10.hana.ondemand.com/sapbncnsc
+      - path: /sapbncnsc/resources/sap/bnc/nsc
+        url: https://vesta-partners---aspm-vestatest-cpiot-nss-iam-flp-approuter.cfapps.eu10.hana.ondemand.com
   - name: fiori-tools-appreload
     afterMiddleware: compression
     configuration:
      port: 35729
      path: webapp
+---
+specVersion: "2.4"
+kind: extension
+type: server-middleware
+metadata:
+  name: static-file
+middleware:
+  path: lib/middleware/static-file.js
