@@ -1,6 +1,6 @@
 # nsc-ui5-host
 
-A UI5 application to test the integration of NSC custom UI5 library.
+An UI5 application to test the integration of NSC custom UI5 library.
 
 ![](./assets/app.jpg)
 
